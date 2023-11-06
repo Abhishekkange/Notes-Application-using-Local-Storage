@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Applcation</title>
+
+    <style>
+
+        body{
+
+            background-color: #fff5c0bc;
+
+
+
+        }
+
+        nav img{
+
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            
+
+        }
+        nav h2{
+
+            font-family: sans-serif;
+            align-items: center;
+        }
+
+        nav{
+
+            display: flex;
+            background-color: #ffdf2a;
+            box-shadow: 0px 0px 30px 2px #ccc;
+            justify-content: space-between;
+        }
+
+        .leftContainer{
+
+            display: flex;
+            align-items: center;
+        }
+
+        
+
+        nav button{
+
+            border-style: none;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin: 10px;
+            padding: 10px 20px 10px 20px;
+            background-color: #ffcd2a;
+            color: black;
+
+        }
+
+        .addNotesContainer{
+
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0px 0px 30px 2px #ccc;
+            
+        }
+        label{
+
+            display: block;
+        }
+
+        input{
+
+            display: block;
+            padding: 15px;
+            width: 330px;
+        }
+
+        #submitNote{
+
+            border-style: none;
+            color: black;
+            margin: 10px;
+            background-color: #ffdf2a;
+            box-shadow: 0px 0px 10px 2px #ccc;
+            padding: 10px 30px 10px 30px;
+        }
+        .utility{
+
+            width: 20px;
+            height: 20px;
+            margin: 10px;
+           
+        }
+
+        .noteUtilities{
+
+            align-items: center;
+            justify-content: center;
+        
+        }
+
+        .note p{
+            width: 290px;
+            min-height: 130px;
+            background-color: #fff8f8;
+        }
+
+        .note{
+
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            box-shadow: 0px 0px 10px 2px #ccc;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="leftContainer">
+            <img src="logo.png" alt="Logo">
+        <h2>Keep</h2>
+        </div>
+        <div class="rightContainer">
+            <button id="addNotesBtn">Add Note</button>
+        </div>
+        
+        
+    </nav>
+
+    <section class="addNotes">
+
+        <div class="addNotesContainer">
+
+            <!-- <label >Enter Title of Note</label>
+            <input type="text" id="enterTitle">
+            <label >Enter the Note </label>
+            <textarea style="display: block;" name="ws" id="enterNote" cols="50" rows="5"></textarea>
+            <button type="submit" id="submitNote">Add</button> -->
+
+        </div>
+
+    </section>
+
+    <section class="YourNotesSection">
+        <h3>Your Notes </h3>
+
+        <div class="note">
+            <div class="noteText">
+               <p></p>
+            </div>
+            <div class="noteUtilities">
+                <img class="utility" src="pen.png" alt="">
+                <img class="utility"src="bin.png" alt="">
+            </div>
+        </div>
+    </section>
+
+
+
+    
+
+    <script>
+
+        //finding Ids
+        let addNotesBtn = document.querySelector('#addNotesBtn');
+        let notesContainer = document.querySelector('.addNotes');
+        let submitNote = document.querySelector('#submitNote');
+
+
+
+
+        //functions
+        let submitNotefun = ()=>{
+
+            notesContainer.innerHTML=null;
+
+
+
+        }
+        let showAddNotesSection = ()=>{
+
+
+            notesContainer.innerHTML =  '<div class="addNotesContainer"><label >Enter Title of Note</label><input type="text" id="enterTitle"><label >Enter the Note </label>            <textarea style="display: block;" name="ws" id="enterNote" cols="50" rows="5"></textarea>  <button   id="submitNote">Add</button></div>'
+            
+
+            
+        }
+
+
+        //adding event listeners
+        addNotesBtn.addEventListener('click',showAddNotesSection);
+        submitNote.addEventListener('click',submitNotefun);
+
+
+
+    </script>
+</body>
+</html>
